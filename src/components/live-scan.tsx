@@ -135,7 +135,7 @@ export function LiveScan() {
         }`} />
       </div>
       {/* Terminal body */}
-      <div className="relative p-5 min-h-[300px]">
+      <div className="relative p-5">
         <div className="font-mono text-[12px] leading-[1.9]">
           {lines.slice(0, visibleLines).map((line, i) => (
             <div key={`${line.text}-${i}`} className={getLineClass(line.type)}>
