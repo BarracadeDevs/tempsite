@@ -118,6 +118,127 @@ export function LiveScan() {
     }, 200);
   }, [isScanning, inputUrl]);
 
+  // Cipher grid canvas animation
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animFrame: number;
+    let time = 0;
+
+    // Cipher fragments tied to the puzzle
+    const glyphs = [
+      'A3','F7','0x','B9','C4','E1','D6','48','7F','2A',
+      '⌬','◇','⬡','△','▽','◈','⊡','⊞','⬢','⊠',
+      'α','β','δ','λ','σ','ω','ψ','Σ','Δ','Ω',
+    ];
+
+    interface Node { x: number; y: number; vx: number; vy: number; glyph: string; phase: number; size: number }
+    const nodes: Node[] = [];
+    const nodeCount = 28;
+
+    function initNodes() {
+      nodes.length = 0;
+      const w = canvas!.width;
+      const h = canvas!.height;
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          glyph: glyphs[Math.floor(Math.random() * glyphs.length)],
+          phase: Math.random() * Math.PI * 2,
+          size: 1 + Math.random() * 2,
+        });
+      }
+    }
+
+    function resize() {
+      const rect = canvas!.parentElement!.getBoundingClientRect();
+      canvas!.width = rect.width;
+      canvas!.height = rect.height;
+      if (nodes.length === 0) initNodes();
+    }
+
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas.parentElement!);
+
+    function draw() {
+      time += 0.008;
+      const w = canvas!.width;
+      const h = canvas!.height;
+      ctx!.clearRect(0, 0, w, h);
+
+      // Move nodes
+      for (const n of nodes) {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+        n.x = Math.max(0, Math.min(w, n.x));
+        n.y = Math.max(0, Math.min(h, n.y));
+      }
+
+      // Draw connections
+      const maxDist = 120;
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * 0.12;
+            ctx!.beginPath();
+            ctx!.moveTo(nodes[i].x, nodes[j].y);
+            ctx!.lineTo(nodes[j].x, nodes[j].y);
+            ctx!.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+            ctx!.lineWidth = 0.5;
+            ctx!.stroke();
+          }
+        }
+      }
+
+      // Draw nodes as glyphs
+      ctx!.textAlign = 'center';
+      ctx!.textBaseline = 'middle';
+      for (const n of nodes) {
+        const pulse = Math.sin(time * 2 + n.phase) * 0.5 + 0.5;
+        const alpha = 0.08 + pulse * 0.14;
+        ctx!.font = `${9 + n.size}px "JetBrains Mono", monospace`;
+        ctx!.fillStyle = `rgba(16, 185, 129, ${alpha})`;
+        ctx!.fillText(n.glyph, n.x, n.y);
+
+        // Tiny dot at center
+        ctx!.beginPath();
+        ctx!.arc(n.x, n.y, 1, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(16, 185, 129, ${alpha * 0.6})`;
+        ctx!.fill();
+      }
+
+      // Scanning sweep line
+      const sweepX = ((time * 40) % (w + 60)) - 30;
+      const grad = ctx!.createLinearGradient(sweepX - 30, 0, sweepX + 30, 0);
+      grad.addColorStop(0, 'rgba(16, 185, 129, 0)');
+      grad.addColorStop(0.5, 'rgba(16, 185, 129, 0.03)');
+      grad.addColorStop(1, 'rgba(16, 185, 129, 0)');
+      ctx!.fillStyle = grad;
+      ctx!.fillRect(sweepX - 30, 0, 60, h);
+
+      animFrame = requestAnimationFrame(draw);
+    }
+
+    animFrame = requestAnimationFrame(draw);
+    return () => {
+      cancelAnimationFrame(animFrame);
+      ro.disconnect();
+    };
+  }, []);
+
   return (
     <div ref={ref} className="rounded-xl border border-white/[0.07] bg-[#0c0c0c] overflow-hidden shadow-2xl shadow-black/40">
       {/* Terminal header */}
@@ -135,8 +256,10 @@ export function LiveScan() {
         }`} />
       </div>
       {/* Terminal body */}
-      <div className="relative p-5">
-        <div className="font-mono text-[12px] leading-[1.9]">
+      <div className="relative p-5 min-h-[340px]">
+        {/* Cipher network background */}
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
+        <div className="relative z-10 font-mono text-[12px] leading-[1.9]">
           {lines.slice(0, visibleLines).map((line, i) => (
             <div key={`${line.text}-${i}`} className={getLineClass(line.type)}>
               {line.text || '\u00A0'}

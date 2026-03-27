@@ -4,6 +4,7 @@ import { ScrollReveal } from '@/components/scroll-reveal';
 import { CodeBlock } from '@/components/code-block';
 import { Button } from '@/components/button';
 import { ArrowRight } from 'lucide-react';
+import { AmbientCanvas } from '@/components/ambient-canvas';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -139,7 +140,8 @@ export default function DocsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-32 pb-20">
+      <main className="relative isolate pt-32 pb-20">
+        <AmbientCanvas variant="binary" className="absolute inset-0 -z-10" opacity={0.3} />
         <div className="mx-auto max-w-4xl px-6">
 
           {/* Header */}

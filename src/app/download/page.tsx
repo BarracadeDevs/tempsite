@@ -18,6 +18,7 @@ import {
   AlertTriangle,
   X,
 } from 'lucide-react';
+import { AmbientCanvas } from '@/components/ambient-canvas';
 
 const VERSION = '1.2.0';
 
@@ -227,7 +228,8 @@ export default function DownloadPage() {
         </div>
       )}
 
-      <main className="pt-32 pb-20">
+      <main className="relative isolate pt-32 pb-20">
+        <AmbientCanvas variant="topology" className="absolute inset-0 -z-10" opacity={0.3} />
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           {/* Header */}
           <ScrollReveal>

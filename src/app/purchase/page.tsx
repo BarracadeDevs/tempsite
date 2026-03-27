@@ -5,6 +5,7 @@ import { ScrollReveal } from '@/components/scroll-reveal';
 import { CipherText } from '@/components/cipher-text';
 import { GlitchText } from '@/components/glitch-text';
 import { Check } from 'lucide-react';
+import { AmbientCanvas } from '@/components/ambient-canvas';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -80,7 +81,8 @@ export default function PurchasePage() {
 
           {/* FAQ */}
           <ScrollReveal delay={0.25}>
-            <div className="mt-24 pt-16 border-t border-white/[0.04]">
+            <div className="relative isolate mt-24 pt-16 border-t border-white/[0.04]">
+              <AmbientCanvas variant="waveform" className="absolute inset-0 -z-10" opacity={0.35} />
               <h2 className="text-[15px] font-medium text-neutral-300 mb-10">Common questions</h2>
               <div className="grid sm:grid-cols-2 gap-x-16 gap-y-8">
                 {[
