@@ -94,7 +94,7 @@ export default function Page() {
 
               <ScrollReveal delay={0.15}>
                 <p className="mt-4 text-[12px] text-neutral-600 font-mono">
-                  v1.2 Â· Windows, macOS, Linux Â· $69.99 one-time
+                  Windows, macOS, Linux
                 </p>
               </ScrollReveal>
 
