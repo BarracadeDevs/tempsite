@@ -1,4 +1,4 @@
-import { Nav } from '@/components/nav';
+﻿import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/button';
 import { LiveScan } from '@/components/live-scan';
@@ -65,7 +65,7 @@ export default function Page() {
       <KonamiEgg />
       <main>
 
-        {/* ── Hero ───────────────────────────────────────────── */}
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
           <MatrixRain />
           <div className="absolute top-0 right-0 w-[55%] h-full hidden lg:block pointer-events-none">
@@ -80,7 +80,7 @@ export default function Page() {
             />
           </div>
 
-          <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="relative z-20 mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="max-w-xl">
               <ScrollReveal delay={0.1}>
                 <p className="text-[15.5px] text-neutral-400 leading-[1.75] max-w-lg">
@@ -94,7 +94,7 @@ export default function Page() {
 
               <ScrollReveal delay={0.15}>
                 <p className="mt-4 text-[12px] text-neutral-600 font-mono">
-                  v1.2 · Windows, macOS, Linux · $69.99 one-time
+                  v1.2 Â· Windows, macOS, Linux Â· $69.99 one-time
                 </p>
               </ScrollReveal>
 
@@ -120,9 +120,9 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Overview ────────────────────────────────────────── */}
+        {/* â”€â”€ Overview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
               <ScrollReveal delay={0}>
                 <div>
@@ -164,13 +164,13 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Scanner ─────────────────────────────────────────── */}
+        {/* â”€â”€ Scanner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative py-24 border-t border-white/[0.04]">
           <div className="absolute left-[10%] top-1/3 w-[400px] h-[400px] bg-emerald-500/[0.015] rounded-full blur-[100px] pointer-events-none" />
           <div className="hidden lg:block absolute right-10 top-12 pointer-events-none select-none">
-            <div className="text-[9px] font-mono text-white/[0.04] leading-relaxed tracking-[0.25em] [writing-mode:vertical-lr]">6A09E667·BB67AE85·3C6EF372</div>
+            <div className="text-[9px] font-mono text-white/[0.04] leading-relaxed tracking-[0.25em] [writing-mode:vertical-lr]">6A09E667Â·BB67AE85Â·3C6EF372</div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid lg:grid-cols-[1fr,1.3fr] gap-16 items-start">
               <ScrollReveal>
                 <div>
@@ -202,7 +202,7 @@ export default function Page() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-1">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-1">
           <div className="opacity-0 hover:opacity-40 transition-opacity duration-[2000ms] text-right">
             <CipherText
               encrypted="01101000 00110110 01100001 00110000 00111001 01100101 00110110 00110110 00110111"
@@ -212,17 +212,17 @@ export default function Page() {
           </div>
         </div>
 
-        {/* ── Runtime Protection ──────────────────────────────── */}
+        {/* â”€â”€ Runtime Protection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative py-24 border-t border-white/[0.04]">
           <div className="absolute right-[8%] top-1/4 w-[350px] h-[350px] bg-emerald-500/[0.012] rounded-full blur-[80px] pointer-events-none" />
           <div className="hidden lg:block absolute left-6 bottom-20 pointer-events-none select-none">
             <div className="flex flex-col gap-1.5">
               <span className="text-[8px] font-mono text-emerald-900/20 tracking-[0.2em]">BLOCKED</span>
-              <span className="text-[8px] font-mono text-white/[0.03] tracking-[0.2em]">4F·A9·2C·7E</span>
-              <span className="text-[8px] font-mono text-white/[0.03] tracking-[0.2em]">1B·83·D6·5F</span>
+              <span className="text-[8px] font-mono text-white/[0.03] tracking-[0.2em]">4FÂ·A9Â·2CÂ·7E</span>
+              <span className="text-[8px] font-mono text-white/[0.03] tracking-[0.2em]">1BÂ·83Â·D6Â·5F</span>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <ScrollReveal>
               <h2 className="text-[15px] font-medium text-white mb-4">
                 Runtime protection
@@ -273,15 +273,15 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Headers Generator ───────────────────────────────── */}
+        {/* â”€â”€ Headers Generator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative py-24 border-t border-white/[0.04]">
           <div className="absolute left-[5%] bottom-1/4 w-[300px] h-[300px] bg-emerald-500/[0.01] rounded-full blur-[80px] pointer-events-none" />
           <div className="hidden lg:block absolute right-8 bottom-16 pointer-events-none select-none">
             <div className="text-[8px] font-mono text-white/[0.035] tracking-[0.3em] leading-loose">
-              CSP·HSTS·XFO<br/>CORP·COEP·COOP
+              CSPÂ·HSTSÂ·XFO<br/>CORPÂ·COEPÂ·COOP
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid lg:grid-cols-[1.3fr,1fr] gap-16 items-start">
               <ScrollReveal>
                 <CodeBlock code={headersCode} filename="next.config.js" />
@@ -314,13 +314,13 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Code Analysis ───────────────────────────────────── */}
+        {/* â”€â”€ Code Analysis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative py-24 border-t border-white/[0.04]">
           <div className="absolute right-[12%] top-1/3 w-[350px] h-[350px] bg-emerald-500/[0.012] rounded-full blur-[100px] pointer-events-none" />
           <div className="hidden lg:block absolute left-8 top-16 pointer-events-none select-none">
-            <div className="text-[9px] font-mono text-white/[0.04] leading-relaxed tracking-[0.25em] [writing-mode:vertical-lr]">SAST·CVE·SBOM·SARIF</div>
+            <div className="text-[9px] font-mono text-white/[0.04] leading-relaxed tracking-[0.25em] [writing-mode:vertical-lr]">SASTÂ·CVEÂ·SBOMÂ·SARIF</div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid lg:grid-cols-[1fr,1.3fr] gap-16 items-start">
               <ScrollReveal>
                 <div>
@@ -357,17 +357,17 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── Compliance ──────────────────────────────────────── */}
+        {/* â”€â”€ Compliance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative py-24 border-t border-white/[0.04]">
           <div className="absolute left-[15%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/[0.015] rounded-full blur-[100px] pointer-events-none" />
           <div className="hidden lg:block absolute right-10 top-20 pointer-events-none select-none">
             <div className="flex flex-col gap-2">
-              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">SOC2 ████████░░ 87%</span>
-              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">PCI  █████████░ 92%</span>
-              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">HIPA ███████░░░ 78%</span>
+              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">SOC2 â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘ 87%</span>
+              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">PCI  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘ 92%</span>
+              <span className="text-[8px] font-mono text-white/[0.04] tracking-[0.3em]">HIPA â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘ 78%</span>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <ScrollReveal>
                 <FeatureVisual type="compliance" />
@@ -398,12 +398,12 @@ export default function Page() {
         </section>
 
         {/* Puzzle breadcrumbs */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-2 flex justify-between">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-2 flex justify-between">
           <div className="opacity-0 hover:opacity-30 transition-opacity duration-[3000ms]">
             <CipherText
               encrypted="Uif!cbssjfs!qspufdut"
               decrypted="THE BARRIER PROTECTS"
-              hint="Shifted by one — what stands between you and access?"
+              hint="Shifted by one â€” what stands between you and access?"
             />
           </div>
           <div className="opacity-0 hover:opacity-30 transition-opacity duration-[3000ms]">
@@ -422,9 +422,9 @@ export default function Page() {
           </div>
         </div>
 
-        {/* ── Pricing ─────────────────────────────────────────── */}
+        {/* â”€â”€ Pricing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="py-16 border-t border-white/[0.04]">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <ScrollReveal>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <div>

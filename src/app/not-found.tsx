@@ -7,7 +7,7 @@ export default function NotFound() {
     <>
       <Nav />
       <main className="min-h-screen pt-40 pb-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 text-center">
           <p className="text-[11px] font-mono text-neutral-700 mb-4">404</p>
           <h1 className="text-2xl font-medium tracking-tight text-white">
             Page not found

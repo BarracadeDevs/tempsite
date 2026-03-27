@@ -29,7 +29,7 @@ export default function PurchasePage() {
     <>
       <Nav />
       <main className="min-h-screen pt-32 pb-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <ScrollReveal>
             <GlitchText
               as="h1"

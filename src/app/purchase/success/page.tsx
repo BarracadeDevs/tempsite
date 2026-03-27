@@ -68,7 +68,7 @@ function PurchaseSuccessContent() {
     <>
       <Nav />
       <main className="min-h-screen flex items-center">
-        <div className="mx-auto max-w-6xl px-6 w-full pt-20 pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full pt-20 pb-20">
           <div className="max-w-md">
             {verifying ? (
               <div className="flex items-center gap-3">

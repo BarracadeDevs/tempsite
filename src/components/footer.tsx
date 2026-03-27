@@ -5,7 +5,7 @@ import { CipherText } from '@/components/cipher-text';
 export function Footer() {
   return (
     <footer className="border-t border-white/[0.04] bg-[#050505]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-10 pb-8">
+      <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 pt-10 pb-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center">
             <Image src="/no-backround-logo.png" alt="Barracade" width={90} height={20} />

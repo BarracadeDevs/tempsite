@@ -1,4 +1,4 @@
-import { Nav } from '@/components/nav';
+﻿import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { FeatureVisual } from '@/components/feature-visual';
 import { ScrollReveal } from '@/components/scroll-reveal';
@@ -64,19 +64,19 @@ exclusions:
 
 const complianceCode = `$ barracade compliance report --framework soc2
 
-SOC 2 Type II — Coverage Report
+SOC 2 Type II â€” Coverage Report
 Generated: 2026-03-15
 
-CC1.1  Control Environment         ██████████  100%
-CC2.1  Communication               ████████░░   82%
-CC3.1  Risk Assessment             █████████░   91%
-CC4.1  Monitoring Activities       ████████░░   85%
-CC5.1  Control Activities          █████████░   94%
-CC6.1  Logical Access              ██████████   97%
-CC6.2  System Operations           ████████░░   88%
-CC6.3  Change Management           █████████░   90%
-CC7.1  System Monitoring           █████████░   93%
-CC8.1  Incident Management         ████████░░   86%
+CC1.1  Control Environment         â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  100%
+CC2.1  Communication               â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘   82%
+CC3.1  Risk Assessment             â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘   91%
+CC4.1  Monitoring Activities       â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘   85%
+CC5.1  Control Activities          â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘   94%
+CC6.1  Logical Access              â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ   97%
+CC6.2  System Operations           â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘   88%
+CC6.3  Change Management           â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘   90%
+CC7.1  System Monitoring           â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘   93%
+CC8.1  Incident Management         â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘   86%
 
 Overall: 91% coverage (47/52 controls met)
 Gaps: 5 controls require remediation
@@ -88,23 +88,23 @@ Scanning 847 files across 3 languages...
 
   HIGH   src/api/auth.ts:42
          Hardcoded JWT secret in source code
-         → Move to environment variable
+         â†’ Move to environment variable
 
   HIGH   src/db/queries.py:118
          SQL query built with string concatenation
-         → Use parameterized queries
+         â†’ Use parameterized queries
 
   MED    src/utils/crypto.ts:23
          Using Math.random() for token generation
-         → Use crypto.getRandomValues()
+         â†’ Use crypto.getRandomValues()
 
   MED    src/api/upload.ts:67
          No file type validation on upload endpoint
-         → Validate MIME type and extension
+         â†’ Validate MIME type and extension
 
   LOW    src/config/cors.ts:8
          Wildcard CORS origin in production config
-         → Restrict to specific domains
+         â†’ Restrict to specific domains
 
 5 findings (2 high, 2 medium, 1 low)
 Scanned in 3.2s`;
@@ -114,7 +114,7 @@ export default function FeaturesPage() {
     <>
       <Nav />
       <main className="pt-32 pb-20">
-        {/* ── Header ──────────────────────────────────────────── */}
+        {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="relative">
           <div className="hidden lg:block pointer-events-none">
             <Image
@@ -126,7 +126,7 @@ export default function FeaturesPage() {
               priority
             />
           </div>
-          <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-10 mb-20">
+          <div className="relative z-20 mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 mb-20">
             <ScrollReveal>
               <h1 className="text-2xl font-medium tracking-tight text-white sm:text-3xl">
                 Features
@@ -142,8 +142,8 @@ export default function FeaturesPage() {
           </div>
         </div>
 
-        {/* ── Website Scanner ─────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Website Scanner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-start">
             <ScrollReveal>
               <div>
@@ -179,8 +179,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── Site Health ─────────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Site Health â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1.2fr,1fr] gap-16 items-start">
             <ScrollReveal>
               <FeatureVisual type="siteHealth" />
@@ -216,8 +216,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── Headers Generator ───────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Headers Generator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-start">
             <ScrollReveal>
               <div>
@@ -257,8 +257,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── RASP Engine ─────────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ RASP Engine â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <ScrollReveal>
             <h2 className="text-[15px] font-medium text-white mb-4">RASP Engine</h2>
             <p className="text-[13px] text-neutral-500 leading-[1.75] max-w-2xl mb-4">
@@ -323,8 +323,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── Defense Engine ───────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Defense Engine â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1.2fr,1fr] gap-16 items-start">
             <ScrollReveal>
               <FeatureVisual type="defense" />
@@ -378,8 +378,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── SAST ────────────────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ SAST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-start">
             <ScrollReveal>
               <div>
@@ -427,8 +427,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── Compliance ──────────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Compliance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1.2fr,1fr] gap-16 items-start">
             <ScrollReveal>
               <CodeBlock code={complianceCode} filename="terminal" />
@@ -467,8 +467,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── Dependencies ────────────────────────────────────── */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 border-t border-white/[0.04]">
+        {/* â”€â”€ Dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <section className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
           <div className="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-start">
             <ScrollReveal>
               <div>
@@ -505,7 +505,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* Puzzle breadcrumbs */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-12 flex justify-between">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 mt-12 flex justify-between">
           <div className="opacity-0 hover:opacity-25 transition-opacity duration-[3000ms]">
             <CipherText
               encrypted="62623637616538350000"
@@ -522,8 +522,8 @@ export default function FeaturesPage() {
           </div>
         </div>
 
-        {/* ── CTA ─────────────────────────────────────────────── */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-20 pt-16 border-t border-white/[0.04]">
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 mt-20 pt-16 border-t border-white/[0.04]">
           <ScrollReveal>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
               <div>

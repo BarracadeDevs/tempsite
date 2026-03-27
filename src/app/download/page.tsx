@@ -132,7 +132,7 @@ export default function DownloadPage() {
       <>
         <Nav />
         <main className="min-h-screen flex items-center pb-20">
-          <div className="mx-auto max-w-6xl px-6 w-full pt-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full pt-20">
             <div className="max-w-md">
               <h1 className="text-2xl font-medium text-white tracking-tight mb-4">
                 Sign in to download
@@ -156,7 +156,7 @@ export default function DownloadPage() {
       <>
         <Nav />
         <main className="min-h-screen flex items-center pb-20">
-          <div className="mx-auto max-w-6xl px-6 w-full pt-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full pt-20">
             <div className="max-w-md">
               <h1 className="text-2xl font-medium text-white tracking-tight mb-4">
                 License required
@@ -228,7 +228,7 @@ export default function DownloadPage() {
       )}
 
       <main className="pt-32 pb-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
           {/* Header */}
           <ScrollReveal>
             <GlitchText

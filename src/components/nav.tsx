@@ -27,7 +27,7 @@ export function Nav() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-white/[0.04]' : 'bg-transparent border-b border-transparent'}`}>
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-14 max-w-[1600px] items-center justify-between px-6 lg:px-12 xl:px-16">
         <Link href="/" className="flex items-center">
           <Image src="/no-backround-logo.png" alt="Barracade" width={110} height={24} />
         </Link>
@@ -79,7 +79,7 @@ export function Nav() {
 
       {mobileOpen && (
         <div className="md:hidden border-t border-white/[0.04] bg-[#050505]/95 backdrop-blur-xl">
-          <nav className="mx-auto max-w-7xl px-6 lg:px-10 py-4 flex flex-col gap-1">
+          <nav className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
