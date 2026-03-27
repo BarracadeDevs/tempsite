@@ -16,13 +16,11 @@ export default async function LoginPage({
   return (
     <>
       <Nav />
-      <main className="min-h-screen flex items-center pb-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full pt-20">
-          <AuthForm
-            mode="login"
-            callbackUrl={callbackUrl || '/'}
-          />
-        </div>
+      <main className="min-h-screen flex items-center justify-center">
+        <AuthForm
+          mode="login"
+          callbackUrl={callbackUrl || '/'}
+        />
       </main>
       <Footer />
     </>

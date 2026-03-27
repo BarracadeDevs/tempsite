@@ -83,8 +83,8 @@ export function AuthForm({ mode, callbackUrl = '/' }: AuthFormProps) {
       : `/${otherMode}`;
 
   return (
-    <div className="max-w-sm mx-auto">
-      <Image src="/no-backround-icon.png" alt="Barracade" width={28} height={28} className="mb-6" />
+    <div className="max-w-sm w-full px-6 text-center">
+      <Image src="/no-backround-logo.png" alt="Barracade" width={180} height={40} className="mx-auto mb-8 invert" />
       <h1 className="text-2xl font-medium text-white tracking-tight mb-2">
         {mode === 'login' ? 'Sign in' : 'Create an account'}
       </h1>
@@ -94,7 +94,7 @@ export function AuthForm({ mode, callbackUrl = '/' }: AuthFormProps) {
           : 'Set up your account to download Barracade.'}
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 text-left">
         {mode === 'signup' && (
           <div>
             <label className="block text-[12px] text-neutral-600 mb-1.5">
