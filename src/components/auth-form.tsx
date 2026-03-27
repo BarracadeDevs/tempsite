@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 
 interface AuthFormProps {
@@ -84,7 +83,6 @@ export function AuthForm({ mode, callbackUrl = '/' }: AuthFormProps) {
 
   return (
     <div className="max-w-sm w-full px-6 text-center">
-      <Image src="/no-backround-logo.png" alt="Barracade" width={180} height={40} className="mx-auto mb-8 invert" />
       <h1 className="text-2xl font-medium text-white tracking-tight mb-2">
         {mode === 'login' ? 'Sign in' : 'Create an account'}
       </h1>
