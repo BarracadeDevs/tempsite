@@ -229,7 +229,7 @@ export default function DownloadPage() {
       )}
 
       <main className="relative isolate pt-32 pb-20">
-        <AmbientCanvas variant="topology" className="absolute inset-0 -z-10" opacity={0.3} />
+        <AmbientCanvas variant="topology" className="absolute inset-0 -z-10" opacity={0.7} />
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           {/* Header */}
           <ScrollReveal>

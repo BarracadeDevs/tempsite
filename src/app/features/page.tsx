@@ -260,7 +260,7 @@ export default function FeaturesPage() {
 
         {/* â”€â”€ RASP Engine â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative isolate mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
-          <AmbientCanvas variant="circuits" className="absolute inset-0 -z-10" opacity={0.4} />
+          <AmbientCanvas variant="circuits" className="absolute inset-0 -z-10" opacity={0.75} />
           <ScrollReveal>
             <h2 className="text-[15px] font-medium text-white mb-4">RASP Engine</h2>
             <p className="text-[13px] text-neutral-500 leading-[1.75] max-w-2xl mb-4">
@@ -471,7 +471,7 @@ export default function FeaturesPage() {
 
         {/* â”€â”€ Dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative isolate mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16 py-20 border-t border-white/[0.04]">
-          <AmbientCanvas variant="hexgrid" className="absolute inset-0 -z-10" opacity={0.35} />
+          <AmbientCanvas variant="hexgrid" className="absolute inset-0 -z-10" opacity={0.75} />
           <div className="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-start">
             <ScrollReveal>
               <div>

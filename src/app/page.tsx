@@ -123,7 +123,7 @@ export default function Page() {
 
         {/* â”€â”€ Overview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative isolate py-20">
-          <AmbientCanvas variant="constellation" className="absolute inset-0 -z-10" opacity={0.5} />
+          <AmbientCanvas variant="constellation" className="absolute inset-0 -z-10" opacity={0.85} />
           <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
               <ScrollReveal delay={0}>
@@ -215,7 +215,8 @@ export default function Page() {
         </div>
 
         {/* â”€â”€ Runtime Protection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-        <section className="relative py-24 border-t border-white/[0.04]">
+        <section className="relative isolate py-24 border-t border-white/[0.04]">
+          <AmbientCanvas variant="waveform" className="absolute inset-0 -z-10" opacity={0.8} />
           <div className="absolute right-[8%] top-1/4 w-[350px] h-[350px] bg-emerald-500/[0.012] rounded-full blur-[80px] pointer-events-none" />
           <div className="hidden lg:block absolute left-6 bottom-20 pointer-events-none select-none">
             <div className="flex flex-col gap-1.5">
@@ -280,7 +281,7 @@ export default function Page() {
           <div className="absolute left-[5%] bottom-1/4 w-[300px] h-[300px] bg-emerald-500/[0.01] rounded-full blur-[80px] pointer-events-none" />
           <div className="hidden lg:block absolute right-8 bottom-16 pointer-events-none select-none">
             <div className="text-[8px] font-mono text-white/[0.035] tracking-[0.3em] leading-loose">
-              CSPÂ·HSTSÂ·XFO<br/>CORPÂ·COEPÂ·COOP
+              CSP·HSTS·XFO<br/>CORP·COEP·COOP
             </div>
           </div>
           <div className="mx-auto max-w-[1600px] px-6 lg:px-12 xl:px-16">
@@ -361,7 +362,7 @@ export default function Page() {
 
         {/* â”€â”€ Compliance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="relative isolate py-24 border-t border-white/[0.04]">
-          <AmbientCanvas variant="radar" className="absolute inset-0 -z-10" opacity={0.4} />
+          <AmbientCanvas variant="radar" className="absolute inset-0 -z-10" opacity={0.8} />
           <div className="absolute left-[15%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/[0.015] rounded-full blur-[100px] pointer-events-none" />
           <div className="hidden lg:block absolute right-10 top-20 pointer-events-none select-none">
             <div className="flex flex-col gap-2">

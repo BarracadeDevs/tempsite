@@ -77,8 +77,8 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
             ctx!.beginPath();
             ctx!.moveTo(stars[i].x, stars[i].y);
             ctx!.lineTo(stars[j].x, stars[j].y);
-            ctx!.strokeStyle = rgba((1 - dist / 140) * 0.08);
-            ctx!.lineWidth = 0.5;
+            ctx!.strokeStyle = rgba((1 - dist / 140) * 0.22);
+            ctx!.lineWidth = 0.6;
             ctx!.stroke();
           }
         }
@@ -87,7 +87,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
         const pulse = Math.sin(time * 2 + s.phase) * 0.5 + 0.5;
         ctx!.beginPath();
         ctx!.arc(s.x, s.y, 1.5 + pulse, 0, Math.PI * 2);
-        ctx!.fillStyle = rgba(0.06 + pulse * 0.1);
+        ctx!.fillStyle = rgba(0.14 + pulse * 0.25);
         ctx!.fill();
       }
     }
@@ -112,8 +112,8 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
             k === 0 ? ctx!.moveTo(px, py) : ctx!.lineTo(px, py);
           }
           ctx!.closePath();
-          ctx!.strokeStyle = rgba(0.03 + wave * 0.06);
-          ctx!.lineWidth = 0.5;
+          ctx!.strokeStyle = rgba(0.07 + wave * 0.15);
+          ctx!.lineWidth = 0.6;
           ctx!.stroke();
         }
       }
@@ -124,9 +124,9 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
       const w = canvas!.width, h = canvas!.height;
       ctx!.clearRect(0, 0, w, h);
       const waves = [
-        { freq: 0.008, amp: 0.15, speed: 1.2, alpha: 0.07 },
-        { freq: 0.012, amp: 0.1, speed: 0.8, alpha: 0.05 },
-        { freq: 0.02, amp: 0.06, speed: 1.6, alpha: 0.04 },
+        { freq: 0.008, amp: 0.15, speed: 1.2, alpha: 0.17 },
+        { freq: 0.012, amp: 0.1, speed: 0.8, alpha: 0.12 },
+        { freq: 0.02, amp: 0.06, speed: 1.6, alpha: 0.09 },
       ];
       for (const wave of waves) {
         ctx!.beginPath();
@@ -167,7 +167,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
         const pulse = Math.sin(time * 1.5 + p.phase) * 0.5 + 0.5;
         ctx!.beginPath();
         ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx!.fillStyle = rgba(0.05 + pulse * 0.08);
+        ctx!.fillStyle = rgba(0.13 + pulse * 0.2);
         ctx!.fill();
       }
     }
@@ -199,7 +199,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
       ctx!.clearRect(0, 0, w, h);
       for (const trace of traces) {
         const pulse = Math.sin(time * 1.2 + trace.phase) * 0.5 + 0.5;
-        ctx!.strokeStyle = rgba(0.04 + pulse * 0.06);
+        ctx!.strokeStyle = rgba(0.1 + pulse * 0.14);
         ctx!.lineWidth = 0.8;
         ctx!.beginPath();
         for (const seg of trace.segments) {
@@ -211,7 +211,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
         for (const seg of trace.segments) {
           ctx!.beginPath();
           ctx!.arc(seg.x2, seg.y2, 2, 0, Math.PI * 2);
-          ctx!.fillStyle = rgba(0.06 + pulse * 0.08);
+          ctx!.fillStyle = rgba(0.15 + pulse * 0.2);
           ctx!.fill();
         }
       }
@@ -228,8 +228,8 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
       for (let i = 1; i <= 4; i++) {
         ctx!.beginPath();
         ctx!.arc(cx, cy, maxR * (i / 4), 0, Math.PI * 2);
-        ctx!.strokeStyle = rgba(0.04);
-        ctx!.lineWidth = 0.5;
+        ctx!.strokeStyle = rgba(0.1);
+        ctx!.lineWidth = 0.6;
         ctx!.stroke();
       }
 
@@ -237,28 +237,31 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
       ctx!.beginPath();
       ctx!.moveTo(cx - maxR, cy); ctx!.lineTo(cx + maxR, cy);
       ctx!.moveTo(cx, cy - maxR); ctx!.lineTo(cx, cy + maxR);
-      ctx!.strokeStyle = rgba(0.03);
+      ctx!.strokeStyle = rgba(0.07);
+      ctx!.lineWidth = 0.5;
       ctx!.stroke();
 
-      // Sweep
+      // Sweep — layered arcs (no createConicGradient for compatibility)
       const angle = time * 0.8;
-      const grad = ctx!.createConicGradient(angle, cx, cy);
-      grad.addColorStop(0, rgba(0.08));
-      grad.addColorStop(0.12, rgba(0));
-      grad.addColorStop(1, rgba(0));
-      ctx!.beginPath();
-      ctx!.moveTo(cx, cy);
-      ctx!.arc(cx, cy, maxR, angle - 0.5, angle);
-      ctx!.closePath();
-      ctx!.fillStyle = grad;
-      ctx!.fill();
+      const sweepLen = Math.PI * 0.35;
+      for (let i = 0; i < 8; i++) {
+        const frac = 1 - i / 8;
+        const a0 = angle - sweepLen * ((i + 1) / 8);
+        const a1 = angle - sweepLen * (i / 8);
+        ctx!.beginPath();
+        ctx!.moveTo(cx, cy);
+        ctx!.arc(cx, cy, maxR, a0, a1);
+        ctx!.closePath();
+        ctx!.fillStyle = rgba(0.22 * frac);
+        ctx!.fill();
+      }
 
       // Sweep line
       ctx!.beginPath();
       ctx!.moveTo(cx, cy);
       ctx!.lineTo(cx + Math.cos(angle) * maxR, cy + Math.sin(angle) * maxR);
-      ctx!.strokeStyle = rgba(0.15);
-      ctx!.lineWidth = 1;
+      ctx!.strokeStyle = rgba(0.4);
+      ctx!.lineWidth = 1.5;
       ctx!.stroke();
 
       // Blips
@@ -270,8 +273,8 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
         if (diff < 1.5) {
           const fade = 1 - diff / 1.5;
           ctx!.beginPath();
-          ctx!.arc(cx + Math.cos(bAngle) * maxR * blips[i], cy + Math.sin(bAngle) * maxR * blips[i], 2, 0, Math.PI * 2);
-          ctx!.fillStyle = rgba(fade * 0.2);
+          ctx!.arc(cx + Math.cos(bAngle) * maxR * blips[i], cy + Math.sin(bAngle) * maxR * blips[i], 3, 0, Math.PI * 2);
+          ctx!.fillStyle = rgba(fade * 0.45);
           ctx!.fill();
         }
       }
@@ -314,7 +317,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
           const cy = col.y + j * 14;
           if (cy < -14 || cy > h + 14) continue;
           const fade = j / col.chars.length;
-          ctx!.fillStyle = rgba(0.03 + fade * 0.06);
+          ctx!.fillStyle = rgba(0.08 + fade * 0.15);
           ctx!.fillText(col.chars[j], col.x, cy);
         }
       }
@@ -355,8 +358,8 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
           ctx!.beginPath();
           ctx!.moveTo(node.x, node.y);
           ctx!.lineTo(target.x, target.y);
-          ctx!.strokeStyle = rgba(0.04 + pulse * 0.04);
-          ctx!.lineWidth = 0.6;
+          ctx!.strokeStyle = rgba(0.09 + pulse * 0.1);
+          ctx!.lineWidth = 0.7;
           ctx!.stroke();
 
           // Data packet traveling along line
@@ -365,7 +368,7 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
           const py = node.y + (target.y - node.y) * t;
           ctx!.beginPath();
           ctx!.arc(px, py, 1.5, 0, Math.PI * 2);
-          ctx!.fillStyle = rgba(0.1 + pulse * 0.1);
+          ctx!.fillStyle = rgba(0.2 + pulse * 0.2);
           ctx!.fill();
         }
       }
@@ -379,13 +382,13 @@ export function AmbientCanvas({ variant, className = '', opacity = 1 }: AmbientC
         if (node.tier < 2) {
           ctx!.beginPath();
           ctx!.arc(node.x, node.y, r * 3, 0, Math.PI * 2);
-          ctx!.fillStyle = rgba(0.015 + pulse * 0.02);
+          ctx!.fillStyle = rgba(0.04 + pulse * 0.05);
           ctx!.fill();
         }
 
         ctx!.beginPath();
         ctx!.arc(node.x, node.y, r, 0, Math.PI * 2);
-        ctx!.fillStyle = rgba(0.08 + pulse * 0.1);
+        ctx!.fillStyle = rgba(0.18 + pulse * 0.22);
         ctx!.fill();
       }
     }
