@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env.production
+.env.development
+*.tsbuildinfo
+next-env.d.ts
+src/puzzle/
+
+# Database
+*.db
+*.db-journal
+
+# Temp files
+tempsite/
+temp_pptx.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,20 @@
+// Basic Prisma schema for user authentication
+// You can expand this as needed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  name        String?
+  password    String
+  purchased   Boolean  @default(false)
+  licenseKey  String?
+  purchasedAt DateTime?
+}

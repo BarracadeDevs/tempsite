@@ -1,0 +1,5 @@
+Contact: mailto:security@barracade.com
+Preferred-Languages: en
+Canonical: https://barracade.dev/.well-known/security.txt
+Policy: https://barracade.dev/privacy
+Expires: 2027-01-01T00:00:00.000Z
