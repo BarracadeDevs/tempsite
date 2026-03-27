@@ -8,6 +8,7 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 src/puzzle/
+src/app/puzzle-doc.md
 
 # Database
 *.db
@@ -16,6 +17,18 @@ src/puzzle/
 # Temp files
 tempsite/
 temp_pptx.pptx
+
+# Unused boilerplate assets
+public/file.svg
+public/globe.svg
+public/netlify-logo.svg
+public/next.svg
+public/vercel.svg
+public/window.svg
+public/hero-face.png
+public/images/corgi.jpg
+public/images/github-mark-white.svg
+public/images/grid-bg.svg
 
 # OS files
 .DS_Store
