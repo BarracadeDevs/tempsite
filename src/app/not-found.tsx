@@ -18,13 +18,13 @@ export default function NotFound() {
           <div className="mt-8 flex justify-center gap-3">
             <Link
               href="/"
-              className="rounded-lg bg-emerald-700 px-5 py-2.5 text-[14px] font-medium text-white hover:bg-emerald-600 transition-colors"
+              className="border border-emerald-500/60 bg-emerald-500/5 px-5 py-2.5 text-[14px] font-medium text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400 hover:shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all duration-300"
             >
               Back to home
             </Link>
             <Link
               href="/docs"
-              className="rounded-lg border border-white/[0.08] bg-white/[0.02] px-5 py-2.5 text-[14px] font-medium text-neutral-300 hover:bg-white/[0.04] transition-colors"
+              className="border border-emerald-500/20 bg-transparent px-5 py-2.5 text-[14px] font-medium text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-300 hover:shadow-[0_0_8px_rgba(16,185,129,0.08)] transition-all duration-300"
             >
               Documentation
             </Link>

@@ -159,7 +159,7 @@ export function AuthForm({ mode, callbackUrl = '/' }: AuthFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-lg bg-emerald-700 px-5 py-2.5 text-[14px] font-medium text-white hover:bg-emerald-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full border border-emerald-500/60 bg-emerald-500/5 px-5 py-2.5 text-[14px] font-medium text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400 hover:shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading
             ? <><Loader2 className="h-4 w-4 animate-spin inline mr-2" />{mode === 'login' ? 'Signing in...' : 'Creating account...'}</>

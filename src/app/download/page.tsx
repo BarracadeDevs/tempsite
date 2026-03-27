@@ -219,7 +219,7 @@ export default function DownloadPage() {
 
             <button
               onClick={() => setShowOverlay(false)}
-              className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-2.5 text-[13px] text-neutral-300 hover:bg-white/[0.06] transition-colors"
+              className="w-full border border-emerald-500/30 bg-emerald-500/5 px-4 py-2.5 text-[13px] text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400 hover:shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all duration-300"
             >
               I understand
             </button>
@@ -287,7 +287,7 @@ export default function DownloadPage() {
               </div>
               <a
                 href={primary.endpoint}
-                className="inline-flex items-center gap-2 rounded-lg bg-emerald-700 px-6 py-3 text-[14px] font-medium text-white hover:bg-emerald-600 transition-colors"
+                className="inline-flex items-center gap-2 border border-emerald-500/60 bg-emerald-500/5 px-6 py-3 text-[14px] font-medium text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400 hover:shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all duration-300"
               >
                 <Download className="h-4 w-4" />
                 Download
@@ -305,7 +305,7 @@ export default function DownloadPage() {
                   <a
                     key={p}
                     href={info.endpoint}
-                    className="flex-1 rounded-lg border border-white/[0.06] bg-white/[0.01] p-4 hover:border-white/[0.12] transition-colors"
+                    className="flex-1 border border-emerald-500/20 bg-transparent p-4 hover:border-emerald-500/40 hover:shadow-[0_0_8px_rgba(16,185,129,0.08)] transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Icon className="h-4 w-4 text-neutral-500" />

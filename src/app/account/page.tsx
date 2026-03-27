@@ -88,7 +88,7 @@ export default function AccountPage() {
                   </code>
                   <button
                     onClick={copyLicense}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/[0.06] text-[12px] text-neutral-500 hover:text-neutral-300 hover:border-white/[0.10] transition-colors shrink-0"
+                    className="flex items-center gap-1.5 px-3 py-2 border border-emerald-500/20 text-[12px] text-neutral-500 hover:text-emerald-300 hover:border-emerald-500/40 hover:shadow-[0_0_8px_rgba(16,185,129,0.08)] transition-all duration-300 shrink-0"
                   >
                     {copied ? (
                       <><Check className="h-3.5 w-3.5 text-emerald-500" /> Copied</>

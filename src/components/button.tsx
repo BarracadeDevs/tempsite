@@ -12,8 +12,8 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: 'bg-emerald-700 text-white hover:bg-emerald-600 active:bg-emerald-800',
-  secondary: 'bg-white/[0.03] text-neutral-400 border border-white/[0.06] hover:bg-white/[0.05] hover:text-neutral-300',
+  primary: 'border border-emerald-500/60 bg-emerald-500/5 text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400 hover:shadow-[0_0_12px_rgba(16,185,129,0.15)] active:bg-emerald-500/20',
+  secondary: 'border border-emerald-500/20 bg-transparent text-neutral-400 hover:border-emerald-500/40 hover:text-emerald-300 hover:shadow-[0_0_8px_rgba(16,185,129,0.08)]',
   ghost: 'text-neutral-500 hover:text-neutral-300',
 };
 
@@ -25,7 +25,7 @@ const sizes = {
 
 export function Button({ children, href, variant = 'primary', size = 'md', className, onClick }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 ease-out',
+    'inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-out',
     variants[variant],
     sizes[size],
     className,
